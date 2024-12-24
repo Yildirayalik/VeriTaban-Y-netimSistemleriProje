@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randevu Yönetim Sistemi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Aramak istediğiniz bilgiyi yazın...">
+  <div class="button-container">
+    <button id="doktorButton">Doktor Bilgileri</button>
+    <button id="hastaButton">Hasta Bilgileri</button>
+  </div>
+  <div id="infoTable">
+    <!-- Bilgiler buraya yüklenecek -->
+  </div>
+  <button class="button" id="addRandevuBtn">+ Yeni Randevu Ekle</button>
+  <table id="randevu-table">
+    <thead>
+      <tr>
+        <th>Randevu ID</th>
+        <th>Hasta ID</th>
+        <th>Doktor ID</th>
+        <th>Oda ID</th>
+        <th>Durum ID</th>
+        <th>Randevu Tarihi</th>
+        <th>Silme İşlemi</th>
+        <th>Güncelleme İşlemi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Veriler buraya gelecek -->
+    </tbody>
+  </table>
+
+  <!-- Pop-up -->
+  <div class="popup-overlay" id="popupOverlay"></div>
+  <div class="popup" id="popupForm">
+    <h2>Yeni Randevu Ekle</h2>
+    <form id="randevuForm">
+      <label for="doktor">Doktor Seç:</label>
+      <select id="doktor" name="doktor">
+      </select>
+
+      <label for="hasta">Hasta Seç:</label>
+      <select id="hasta" name="hasta">
+      </select>
+
+      <label for="oda">Oda Seç (Boş olanlar):</label>
+      <select id="oda" name="oda">
+      </select>
+
+      <label for="durum">Randevu Durumu:</label>
+      <select id="durum" name="durum">
+      </select>
+
+      <label for="tarih">Randevu Tarihi:</label>
+      <input type="date" id="tarih" name="tarih">
+
+      <button type="submit">Kaydet</button>
+      <button type="button" id="closePopup">Kapat</button>
+    </form>
+  </div>
+<!-- Güncelleme Pop-up -->
+<!-- Güncelleme Pop-up -->
+<div class="popup-overlay" id="updatePopupOverlay"></div>
+<div class="popup" id="updatePopupForm">
+  <h2>Randevu Güncelle</h2>
+  <form id="updateRandevuForm">
+    <label for="updateDoktor">Doktor Seç:</label>
+    <select id="updateDoktor" name="doktor"></select>
+
+    <label for="updateHasta">Hasta Seç:</label>
+    <select id="updateHasta" name="hasta"></select>
+
+    <label for="updateOda">Oda Seç:</label>
+    <select id="updateOda" name="oda"></select>
+
+    <label for="updateDurum">Durum:</label>
+    <select id="updateDurum" name="durum"></select>
+
+    <label for="updateTarih">Tarih:</label>
+    <input type="date" id="updateTarih" name="tarih">
+
+    <button type="submit">Güncelle</button>
+    <button type="button" id="closeUpdatePopup">Kapat</button>
+  </form>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
